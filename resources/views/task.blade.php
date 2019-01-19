@@ -6,8 +6,15 @@
     <section class="section">
       <form class="" action="{{ route('task.post') }}" method="post">
         {{ csrf_field() }}
-        <input type="text" name="task" value="" required>
-        <button type="submit" name="button">sub</button>
+        <div class="field is-grouped">
+          <p class="control is-expanded">
+            <input class="input" name="task" type="text" placeholder="New task">
+          </p>
+          <p class="control">
+            <button class="button is-warning">Submit</button>
+          </p>
+        </div>
+
       </form>
     @foreach ($tasks as $task)
     <div class="notification is-success">
