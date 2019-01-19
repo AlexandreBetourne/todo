@@ -9,7 +9,6 @@ use App\Task;
 
 class TaskController extends Controller
 {
-
   public function index(Task $task)
   {
     if (Auth::check()) {
@@ -24,7 +23,7 @@ class TaskController extends Controller
   public function post(Task $task, Request $request)
   {
     if (Auth::check()) {
-      $task->create([
+      $task->forceCreate([
         'name' => $request->input('task')
       ]);
       return redirect('/task');
