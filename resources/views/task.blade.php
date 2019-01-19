@@ -1,8 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="section">
+
   <div class="container">
+    <section class="section">
+      <form class="" action="{{ route('task.post') }}" method="post">
+        {{ csrf_field() }}
+        <input type="text" name="task" value="" required>
+        <button type="submit" name="button">sub</button>
+      </form>
     @foreach ($tasks as $task)
     <div class="notification is-success">
 
@@ -12,6 +18,11 @@
       <p class="is-marginless	">Updated at : {{ $task->updated_at }}</p>
     </div>
     @endforeach
+    </section>
+    {{ $tasks }}
   </div>
-</section>
+
+
+
+
 @endsection

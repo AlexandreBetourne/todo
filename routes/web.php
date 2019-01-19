@@ -13,8 +13,13 @@
 
 Auth::routes();
 
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/home', function () {
+    return view('home');
 });
 
 Route::get('/task', 'TaskController@index')->name('task.get');
@@ -22,5 +27,3 @@ Route::get('/task', 'TaskController@index')->name('task.get');
 Route::post('/task', 'TaskController@post')->name('task.post');
 
 Route::get('/task/{id}', 'TaskController@delete')->name('task.delete');
-
-Route::get('/home', 'HomeController@index')->name('home');
